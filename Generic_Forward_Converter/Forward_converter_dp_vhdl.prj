@@ -1,0 +1,6 @@
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\Mux1.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\Mux0.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\INPUT_REG_GENERIC.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\gen_mod_reg.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\ADDER_GENERIC.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Forward_Converter\Forward_converter_dp.vhd"
