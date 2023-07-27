@@ -17,9 +17,13 @@
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE IEEE.std_logic_textio.ALL;
+USE ieee.numeric_std.ALL;
+
+library STD;
+USE STD.textio.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -41,8 +45,9 @@ architecture Behavioral of Generic_forward_converter_TB is
     --constant range       : integer := (2 ** n) - 1;
         
     signal INPUT : std_logic_vector((3*n)-1 downto 0);
-    signal CLK : std_logic := '0';
-    signal RST : std_logic := '0';
+    signal CLK : std_logic  :=  '0';
+    signal RST : std_logic  :=  '0';
+    signal DONE : std_logic := '0';
 
     signal OUTPUT1 : std_logic_vector(n downto 0);
     signal OUTPUT2 : std_logic_vector(n downto 0);
@@ -72,6 +77,7 @@ begin
           INPUT => INPUT,
           CLK => CLK,
           RST => RST,
+          DONE => DONE,
           OUTPUT1 => OUTPUT1,
           OUTPUT2 => OUTPUT2,
           OUTPUT3 => OUTPUT3
@@ -86,19 +92,19 @@ begin
     end process;
 
 
-    stim_proc: process
-        begin		
+--     stim_proc: process
+--         begin		
       
-         wait for 20 ns;	
+--          wait for 20 ns;	
 
-         wait for CLK_period*10;
+--          wait for CLK_period*10;
 
-         wait;
-   end process;
+--          wait;
+--    end process;
 
 
    STIMULUS : process
-      file Fout: TEXT open WRITE_MODE is "OUTPUT.txt";
+      file Fout: TEXT open WRITE_MODE is "RESULT.txt";
       variable current_line: line;
    begin
       write(current_line, string'("TESTFILE FOR  FORWARD CONVERTER"));

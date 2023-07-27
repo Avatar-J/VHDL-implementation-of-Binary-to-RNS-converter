@@ -24,7 +24,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Forward_converter_dp is
     generic(
-        n  : integer  := 3       
+        n  : integer  := 3;
         );
     port(
         INPUT                   : IN STD_LOGIC_VECTOR((3 * n)-1 downto 0);
@@ -71,7 +71,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     signal allones_tmp          : std_logic_vector(n+1 downto 0) := (others => '1');
-    signal or_tmp               : std_logic_vector(n+1 downto 0) := (others => '1'); 
+    signal or_tmp               : std_logic_vector(n+1 downto 0) := (others => '0'); 
 
 
 
@@ -253,18 +253,18 @@ begin
 
     --status signals
 
-    allones_1 : for i in 1 to n-1 generate
-        allones_tmp(i) <= allones_tmp(i-1) and tmp_output_1st_mod(i);
+    allones_1 : for i in 1 to n generate
+        allones_tmp(i) <= allones_tmp(i-1) and tmp_output_1st_mod(i-1);
     end generate;
 
-    allones <= allones_tmp(n-1);
+    allones <= allones_tmp(n);
 
 
-    greater_than: for i in 1 to n-1 generate
-        or_tmp(i) <= or_tmp(i-1) and tmp_output_3rd_mod(i);
+    greater_than: for i in 1 to n generate
+        or_tmp(i) <= or_tmp(i-1) or tmp_output_3rd_mod(i-1);
     end generate;
 
-    grt_than_8_status <= or_tmp(n-1) and tmp_output_3rd_mod(n);
+    grt_than_8_status <= or_tmp(n) and tmp_output_3rd_mod(n);
 
     neg_status  <= tmp_adder_output(n+1);
 
