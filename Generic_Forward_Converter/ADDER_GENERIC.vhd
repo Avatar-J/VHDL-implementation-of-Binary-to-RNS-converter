@@ -10,7 +10,7 @@ use IEEE.math_real.all;
 
 entity ADDER_GENERIC is
     generic(
-        n  : integer  := 3       
+        n  : integer  := 5       
         );
     port(
         A, B        : IN STD_LOGIC_VECTOR(n+1 downto 0);

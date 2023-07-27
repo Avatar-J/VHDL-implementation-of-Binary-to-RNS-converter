@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Forward_converter_Top_Model is
     generic(
-            n  : integer  := 3       
+            n  : integer  := 5       
             );
     port(
         CLK, RST                 : IN STD_LOGIC;
@@ -56,7 +56,7 @@ architecture Behavioral of Forward_converter_Top_Model is
 
     component Forward_converter_dp
         generic(
-            n  : integer  := 3       
+            n  : integer  := 5       
             );
         port(
             INPUT                   : IN STD_LOGIC_VECTOR((3 * n)-1 downto 0);

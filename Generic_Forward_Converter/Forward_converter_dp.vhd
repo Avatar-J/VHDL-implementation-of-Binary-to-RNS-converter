@@ -24,7 +24,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Forward_converter_dp is
     generic(
-        n  : integer  := 3;
+        n  : integer  := 5
         );
     port(
         INPUT                   : IN STD_LOGIC_VECTOR((3 * n)-1 downto 0);
@@ -76,7 +76,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     component INPUT_REG_GENERIC
-    generic (n: positive := 3);
+    generic (n: positive := 5);
     port(
         D           : in STD_LOGIC_VECTOR((3 * n)-1  downto 0);
         R, L, CLK   : IN STD_LOGIC;
@@ -87,7 +87,7 @@ architecture Behavioral of Forward_converter_dp is
 
     component gen_mod_reg is
         generic (
-            n: positive := 3
+            n: positive := 5
             );
         port(
             D           : in STD_LOGIC_VECTOR(n+1  downto 0);
@@ -98,7 +98,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     component Mux0 
-    generic(n: positive:= 3);
+    generic(n: positive:= 5);
     port(
         INPUT0, INPUT1, INPUT2, INPUT3      : IN STD_LOGIC_VECTOR(n+1 downto 0);
         SEL                                 : IN STD_LOGIC_VECTOR(1 downto 0);
@@ -109,7 +109,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     component Mux1 
-        generic(n: positive:= 3);
+        generic(n: positive:= 5);
         port(
             INPUT0, INPUT1, INPUT2, INPUT3, INPUT4, INPUT5, INPUT6, INPUT7  : IN STD_LOGIC_VECTOR(n+1 downto 0);
             SEL                                                             : IN STD_LOGIC_VECTOR(2 downto 0);
@@ -120,7 +120,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     component ADDER_GENERIC
-        generic(n  : integer  := 3 );
+        generic(n  : integer  := 5 );
         port(
             A, B        : IN STD_LOGIC_VECTOR(n+1 downto 0);
             Cin         : IN STD_LOGIC;
@@ -131,7 +131,7 @@ architecture Behavioral of Forward_converter_dp is
 
 
     component Tri_state_buffer is
-        generic (n: positive := 3);
+        generic (n: positive := 5);
         port(
             input           : in std_logic_vector(n downto 0);
             done            : in std_logic;
@@ -266,7 +266,7 @@ begin
 
     grt_than_8_status <= or_tmp(n) and tmp_output_3rd_mod(n);
 
-    neg_status  <= tmp_adder_output(n+1);
+    neg_status  <= tmp_output_3rd_mod(n+1);
 
 
 end Behavioral;

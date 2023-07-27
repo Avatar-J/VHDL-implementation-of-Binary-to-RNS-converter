@@ -1,0 +1,7 @@
+vhdl work "Tri_state_buffer.vhd"
+vhdl work "Mux1.vhd"
+vhdl work "Mux0.vhd"
+vhdl work "INPUT_REG_GENERIC.vhd"
+vhdl work "gen_mod_reg.vhd"
+vhdl work "ADDER_GENERIC.vhd"
+vhdl work "Forward_converter_dp.vhd"

@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Mux1 is
-    generic(n: positive:= 3);
+    generic(n: positive:= 5);
     port(
         INPUT0, INPUT1, INPUT2, INPUT3, INPUT4, INPUT5, INPUT6, INPUT7  : STD_LOGIC_VECTOR(n+1 downto 0);
         SEL                                                             : IN STD_LOGIC_VECTOR(2 downto 0);

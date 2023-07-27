@@ -24,7 +24,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity INPUT_REG_GENERIC is
-    generic (n: positive := 3);
+    generic (n: positive := 5);
     port(
         D: in STD_LOGIC_VECTOR((3 * n)-1  downto 0);
         R, L, CLK: IN STD_LOGIC;

@@ -26,7 +26,7 @@ use IEEE.MATH_REAL.ALL;
 
 entity gen_mod_reg is
     generic (
-        n: positive := 3
+        n: positive := 5
         );
     port(
         D           : in STD_LOGIC_VECTOR(n+1  downto 0);

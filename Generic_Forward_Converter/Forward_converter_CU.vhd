@@ -33,7 +33,6 @@ entity Forward_converter_CU is
     port(
         clk              	:in STD_LOGIC;
         greater_than_one 	:in STD_LOGIC;
-        --add_one        	:in STD_LOGIC;
         cout             	:in STD_LOGIC;
         allones          	:in STD_LOGIC;
         sign_bit_3rd_mod    :in STD_LOGIC;
@@ -105,10 +104,10 @@ comb_proc: process(PresentState, statecount, sign_bit_3rd_mod, greater_than_one,
 					when ST4 =>
 						control_sig <= b"00_000_000_000_000_0";
                          if (statecount = "11") then
-                            if (greater_than_one = '1') then
-                                NextState  <= ST8;
-                            elsif (sign_bit_3rd_mod = '1') then
+							if (sign_bit_3rd_mod = '1') then
                                 NextState <= ST7;
+                            elsif (greater_than_one = '1') then
+                                NextState  <= ST8;
 						    else 
 							    NextState   <= ST9;
                             end if;

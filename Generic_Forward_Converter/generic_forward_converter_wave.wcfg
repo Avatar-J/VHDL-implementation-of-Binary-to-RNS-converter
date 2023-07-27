@@ -12,10 +12,10 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="35" />
    <wvobject fp_name="/forward_converter_top_model/input" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">input[8:0]</obj_property>
-      <obj_property name="ObjectShortName">input[8:0]</obj_property>
+      <obj_property name="ElementShortName">input[11:0]</obj_property>
+      <obj_property name="ObjectShortName">input[11:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -36,20 +36,20 @@
       <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/output1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">output1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">output1[3:0]</obj_property>
+      <obj_property name="ElementShortName">output1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">output1[4:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#800080</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/output2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">output2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">output2[3:0]</obj_property>
+      <obj_property name="ElementShortName">output2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">output2[4:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#800080</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/output3" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">output3[3:0]</obj_property>
-      <obj_property name="ObjectShortName">output3[3:0]</obj_property>
+      <obj_property name="ElementShortName">output3[4:0]</obj_property>
+      <obj_property name="ObjectShortName">output3[4:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#800080</obj_property>
    </wvobject>
@@ -58,6 +58,14 @@
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="BkColor">#ffff00</obj_property>
       <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/third_modulo" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">third_modulo</obj_property>
+      <obj_property name="ObjectShortName">third_modulo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/allones_tmp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">allones_tmp[5:0]</obj_property>
+      <obj_property name="ObjectShortName">allones_tmp[5:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/cout_sig" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">cout_sig</obj_property>
@@ -89,23 +97,39 @@
       <obj_property name="BkColor">#ff0000</obj_property>
       <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
+   <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/mux0_output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mux0_output[5:0]</obj_property>
+      <obj_property name="ObjectShortName">mux0_output[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/mux1_output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mux1_output[5:0]</obj_property>
+      <obj_property name="ObjectShortName">mux1_output[5:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/tmp_output_1st_mod" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">tmp_output_1st_mod[4:0]</obj_property>
-      <obj_property name="ObjectShortName">tmp_output_1st_mod[4:0]</obj_property>
+      <obj_property name="ElementShortName">tmp_output_1st_mod[5:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_output_1st_mod[5:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#ff0000</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/tmp_output_2nd_mod" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">tmp_output_2nd_mod[4:0]</obj_property>
-      <obj_property name="ObjectShortName">tmp_output_2nd_mod[4:0]</obj_property>
+      <obj_property name="ElementShortName">tmp_output_2nd_mod[5:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_output_2nd_mod[5:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#ff0000</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/tmp_output_3rd_mod" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">tmp_output_3rd_mod[4:0]</obj_property>
-      <obj_property name="ObjectShortName">tmp_output_3rd_mod[4:0]</obj_property>
+      <obj_property name="ElementShortName">tmp_output_3rd_mod[5:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_output_3rd_mod[5:0]</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/tmp_output_3rd_mod" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp_output_3rd_mod[5:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp_output_3rd_mod[5:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="divider26" type="divider">
       <obj_property name="label">states</obj_property>
@@ -164,15 +188,15 @@
       <obj_property name="TextColor">230 230 230</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/block0" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">block0[2:0]</obj_property>
-      <obj_property name="ObjectShortName">block0[2:0]</obj_property>
+      <obj_property name="ElementShortName">block0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">block0[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/block1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">block1[5:3]</obj_property>
-      <obj_property name="ObjectShortName">block1[5:3]</obj_property>
+      <obj_property name="ElementShortName">block1[7:4]</obj_property>
+      <obj_property name="ObjectShortName">block1[7:4]</obj_property>
    </wvobject>
    <wvobject fp_name="/forward_converter_top_model/DP_Fconverter/block2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">block2[8:6]</obj_property>
-      <obj_property name="ObjectShortName">block2[8:6]</obj_property>
+      <obj_property name="ElementShortName">block2[11:8]</obj_property>
+      <obj_property name="ObjectShortName">block2[11:8]</obj_property>
    </wvobject>
 </wave_config>

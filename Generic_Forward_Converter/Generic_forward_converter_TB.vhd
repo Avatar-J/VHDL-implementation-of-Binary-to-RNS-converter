@@ -36,7 +36,7 @@ USE STD.textio.all;
 
 entity Generic_forward_converter_TB is
     generic(
-        n  : integer  := 3       
+        n  : integer  := 5       
         );
 end Generic_forward_converter_TB;
 
@@ -58,7 +58,7 @@ architecture Behavioral of Generic_forward_converter_TB is
 
     component Forward_converter_Top_Model is
         generic(
-                n  : integer  := 3       
+                n  : integer  := 5       
                 );
         port(
             CLK, RST                 : IN STD_LOGIC;
@@ -104,7 +104,7 @@ begin
 
 
    STIMULUS : process
-      file Fout: TEXT open WRITE_MODE is "RESULT.txt";
+      file Fout: TEXT open WRITE_MODE is "RESULT_313233.txt";
       variable current_line: line;
    begin
       write(current_line, string'("TESTFILE FOR  FORWARD CONVERTER"));
@@ -121,7 +121,7 @@ begin
       RST <= '1';
       wait for 10 ns;
 
-      for i in 0 to 511 loop
+      for i in 0 to 4079 loop
          RST <= '0';
          INPUT <= STD_LOGIC_VECTOR(to_unsigned(i, INPUT'length));
          wait until DONE = '1';
@@ -129,7 +129,7 @@ begin
 
          
          write(current_line, to_integer(unsigned(INPUT)));
-         write(current_line, string'(" RNS(789) === "));
+         write(current_line, string'(" RNS(313233) === "));
          write(current_line, to_integer(unsigned(OUTPUT1)));
          write(current_line, string'(" "));
          write(current_line, to_integer(unsigned(OUTPUT2)));
