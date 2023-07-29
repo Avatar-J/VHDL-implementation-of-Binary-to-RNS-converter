@@ -1,0 +1,7 @@
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\Two_input_mux.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\Tri_state_buffer.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\Three_input_mux.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\INPUT_REG_GENERIC.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\gen_mod_reg.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\ADDER_GENERIC.vhd"
+vhdl work "C:\Users\jU\Documents\VHDL\Generic_Foward_converter_parrallel\Datapath.vhd"

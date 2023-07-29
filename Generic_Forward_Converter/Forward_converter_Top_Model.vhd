@@ -48,28 +48,28 @@ architecture Behavioral of Forward_converter_Top_Model is
 
     signal mod1_load_sig, mod1_reset_sig, mod2_load_sig, mod2_reset_sig, mod3_load_sig, mod3_reset_sig, input_load_sig, input_reset_sig: std_logic;
 
-    signal cin_sig, done_sig: std_logic;
-    signal mux0_sig         : std_logic_vector(1 downto 0);
-    signal mux1_sig         : std_logic_vector(2 downto 0);
+    signal cin0_sig,cin1_sig, done_sig: std_logic;
+    signal mux0_sig, mux2_sig          : std_logic;
+    signal mux1_sig, mux3_sig          : std_logic_vector(1 downto 0);
 
     signal output_1st_mod   : std_logic_vector(n downto 0);
 
-    component Forward_converter_dp
-        generic(
-            n  : integer  := 5       
-            );
+    component Datapath
+    generic(
+        n  : integer  := 5
+        );
         port(
             INPUT                   : IN STD_LOGIC_VECTOR((3 * n)-1 downto 0);
             CLK                     : IN STD_LOGIC;
-    
+
             --control signals
-            input_load, input_reset, mod1_load, mod1_reset, mod2_load, mod2_reset, mod3_load, mod3_reset, Cin: IN STD_LOGIC;
-            mux_1                   : IN STD_LOGIC_VECTOR(2 downto 0);
-            mux_0                   : IN STD_LOGIC_VECTOR(1 downto 0);
+            input_load, input_reset, mod1_load, mod1_reset, mod2_load, mod2_reset, mod3_load, mod3_reset, Cin0,Cin1 : IN STD_LOGIC;
+            mux_3, mux_1             : IN STD_LOGIC_VECTOR(1 downto 0);
+            mux_0, mux_2             : IN STD_LOGIC;
             done1, done2, done3     : IN STD_LOGIC;
-    
+
             --status signals
-            allones, cout, grt_than_8_status, neg_status    : OUT STD_LOGIC;
+            allones, cout0, grt_than_8_status, neg_status    : OUT STD_LOGIC;
             OUTPUT1, OUTPUT2, OUTPUT3                       : OUT STD_LOGIC_VECTOR(n downto 0)
             
         );
@@ -83,17 +83,17 @@ architecture Behavioral of Forward_converter_Top_Model is
             allones          	:in STD_LOGIC;
             sign_bit_3rd_mod    :in STD_LOGIC;
             reset            	:in STD_LOGIC;
-    
-            mux0		     	:out STD_LOGIC_VECTOR(1 downto 0);
-		    mux1				:out STD_LOGIC_VECTOR(2 downto 0);
-            InputRegLd, InputRegCl, mod2RegLd, mod2RegCl, Cin, mod1RegLd, mod1RegCl, mod3RegLd, mod3RegCl, Done :out STD_LOGIC 
+
+            mux0,mux2		     	:out STD_LOGIC;
+            mux1,mux3				:out STD_LOGIC_VECTOR(1 downto 0);
+            InputRegLd, InputRegCl, mod2RegLd, mod2RegCl, Cin0,Cin1, mod1RegLd, mod1RegCl, mod3RegLd, mod3RegCl, Done :out STD_LOGIC 
 
         );
     end component;
 
 begin
 
-    DP_Fconverter: Forward_converter_dp port map(
+    DP_Fconverter: Datapath port map(
         INPUT               => INPUT,
         CLK                 => CLK,
         input_load          => input_load_sig, 
@@ -104,14 +104,17 @@ begin
         mod2_reset          => mod2_reset_sig, 
         mod3_load           => mod3_load_sig, 
         mod3_reset          => mod3_reset_sig, 
-        Cin                 => cin_sig,
-        mux_1               => mux1_sig, 
-        mux_0               => mux0_sig,
+        Cin0                => cin0_sig,
+        Cin1                => cin1_sig,
+        mux_0               => mux0_sig, 
+        mux_1               => mux1_sig,
+        mux_2               => mux2_sig,
+        mux_3               => mux3_sig,
         done1               => done_sig, 
         done2               => done_sig, 
         done3               => done_sig,
         allones             => allones_sig, 
-        cout                => cout_sig, 
+        cout0               => cout_sig, 
         grt_than_8_status   => grt_than_8_status_sig,
         neg_status          => neg_status_sig,
         OUTPUT1             => output_1st_mod,
@@ -131,11 +134,14 @@ begin
             reset               => RST,
             mux0                => mux0_sig, 
             mux1                => mux1_sig,
+            mux2                => mux2_sig,
+            mux3                => mux3_sig,
             InputRegLd          => input_load_sig, 
             InputRegCl          => input_reset_sig, 
             mod2RegLd           => mod2_load_sig, 
             mod2RegCl           => mod2_reset_sig, 
-            Cin                 => cin_sig, 
+            Cin0                => cin0_sig, 
+            Cin1                => cin1_sig,
             mod1RegLd           => mod1_load_sig, 
             mod1RegCl           => mod1_reset_sig, 
             mod3RegLd           => mod3_load_sig, 
